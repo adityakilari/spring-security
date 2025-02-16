@@ -25,3 +25,16 @@ replay_pid*
 
 # ignore appliaction.yml
 application.yml
+
+# macOS system files
+.DS_Store
+
+# Maven Wrapper (optional, but should be included if you use it)
+mvnw
+mvnw.cmd
+
+# IDE-specific files
+*.iml
+.idea/
+target/
+out/

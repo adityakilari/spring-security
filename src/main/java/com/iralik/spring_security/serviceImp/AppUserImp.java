@@ -32,15 +32,6 @@ public class AppUserImp implements AppUser {
     private final BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder(12);
 
 
-    public String verify(Users user) {
-        Authentication auth = authManager.authenticate
-                (new UsernamePasswordAuthenticationToken(user.getUserName(), user.getPassword()));
-        if (auth.isAuthenticated()) {
-            return jwt.createToken(user.getUserName());
-        }
-        return "fail";
-    }
-
     @Override
     public AppUserInfo saveUser(AppUserInfo user) {
         Optional<Users> appUser = userRepo.findById(user.getId());
